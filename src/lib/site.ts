@@ -1,11 +1,11 @@
 // Central place for site copy. Edit text, images and contact details here.
 
 export const site = {
-  name: "MPTV Solutions",
+  name: "MPTB Solutions",
   tagline: "Technology that works as hard as you do.",
-  email: "hello@mptvsolutions.com",
-  phone: "+63 900 000 0000",
-  address: "Metro Manila, Philippines",
+  email: "admin@mptbsolutions.com",
+  phone: "+63 916 745 1475",
+  address: "Cebu City, Philippines",
 };
 
 export const navLinks = [
@@ -100,18 +100,22 @@ export const stats = [
 export const steps = [
   {
     title: "Consult",
-    description: "We listen to your needs and assess what your business really requires.",
+    description:
+      "We listen to your needs and assess what your business really requires.",
   },
   {
     title: "Plan",
-    description: "A clear proposal with scope, timeline and cost — no surprises.",
+    description:
+      "A clear proposal with scope, timeline and cost — no surprises.",
   },
   {
     title: "Deliver",
-    description: "Our team builds, installs or services with quality checks at every step.",
+    description:
+      "Our team builds, installs or services with quality checks at every step.",
   },
   {
     title: "Support",
-    description: "We stay with you after delivery with maintenance and responsive support.",
+    description:
+      "We stay with you after delivery with maintenance and responsive support.",
   },
 ];
