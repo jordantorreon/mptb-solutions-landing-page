@@ -4,7 +4,7 @@ export const site = {
   name: "MPTB Solutions",
   tagline: "Technology that works as hard as you do.",
   email: "admin@mptbsolutions.com",
-  phone: "+63 916 745 1475",
+  phone: "+63 976 171 0642",
   address: "Cebu City, Philippines",
 };
 
