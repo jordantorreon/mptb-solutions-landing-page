@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MPTV Solutions — Technology & Technical Services",
+  title: "MPTB Solutions — Technology & Technical Services",
   description:
-    "MPTV Solutions is a technology company offering software development, biometric sales, air-conditioning cleaning and technical services.",
+    "MPTB Solutions is a technology company offering software development, biometric sales, air-conditioning cleaning and technical services.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

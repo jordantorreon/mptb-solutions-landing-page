@@ -21,7 +21,7 @@ export const heroSlides = [
     eyebrow: "Technology Partner",
     title: "Smart solutions for modern businesses.",
     description:
-      "From custom software to on-site technical services, MPTV Solutions keeps your business running, secure and ahead.",
+      "From custom software to on-site technical services, MPTB Solutions keeps your business running, secure and ahead.",
     image:
       "https://images.unsplash.com/photo-1518770660439-4636190af475?w=2000&q=80",
   },

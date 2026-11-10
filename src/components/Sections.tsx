@@ -114,7 +114,7 @@ export function About() {
           <div className="relative aspect-[4/5] overflow-hidden rounded-2xl sm:aspect-[4/3] lg:aspect-[4/5]">
             <Image
               src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80"
-              alt="MPTV Solutions office"
+              alt="MPTB Solutions office"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
