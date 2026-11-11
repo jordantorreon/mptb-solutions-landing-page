@@ -37,7 +37,7 @@ export const heroSlides = [
     description:
       "Fingerprint and face-recognition terminals for time attendance and access control, from trusted brands.",
     image:
-      "https://images.unsplash.com/photo-1633265486064-086b219458ec?w=2000&q=80",
+      "/products/zkteco-bio-1.jpeg",
   },
   {
     eyebrow: "CCTV & Security",
@@ -53,7 +53,7 @@ export const heroSlides = [
     description:
       "Subscribe to our proprietary SaaS platforms and software licenses built for growing businesses.",
     image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=2000&q=80",
+      "/products/saas-workforce-analytics.png",
   },
 ];
 
