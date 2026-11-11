@@ -9,113 +9,126 @@ export const site = {
 };
 
 export const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Process", href: "#process" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "Products", href: "/#products" },
+  { label: "About", href: "/#about" },
+  { label: "How to Order", href: "/#process" },
+  { label: "Contact", href: "/#contact" },
+];
+
+export const legalLinks = [
+  { label: "Terms & Conditions", href: "/terms" },
+  { label: "Refund & Return Policy", href: "/refund-policy" },
+  { label: "Privacy Policy", href: "/privacy" },
 ];
 
 export const heroSlides = [
   {
-    eyebrow: "Technology Partner",
-    title: "Smart solutions for modern businesses.",
+    eyebrow: "Tech Hardware & Software",
+    title: "Technology products for modern businesses.",
     description:
-      "From custom software to on-site technical services, MPTB Solutions keeps your business running, secure and ahead.",
+      "Shop biometric devices, CCTV cameras, networking equipment and ready-to-use software from MPTB Solutions.",
     image:
       "https://images.unsplash.com/photo-1518770660439-4636190af475?w=2000&q=80",
   },
   {
-    eyebrow: "Software Development",
-    title: "Software built around how you work.",
-    description:
-      "Web apps, mobile apps and business systems designed, built and supported by our in-house engineers.",
-    image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=2000&q=80",
-  },
-  {
-    eyebrow: "Biometrics & Security",
+    eyebrow: "Biometric Devices",
     title: "Secure access. Accurate attendance.",
     description:
-      "Biometric devices for attendance and access control — supplied, installed and integrated with your systems.",
+      "Fingerprint and face-recognition terminals for time attendance and access control, from trusted brands.",
     image:
       "https://images.unsplash.com/photo-1633265486064-086b219458ec?w=2000&q=80",
   },
   {
-    eyebrow: "Technical Services",
-    title: "Reliable hands for every facility.",
+    eyebrow: "CCTV & Security",
+    title: "Clear coverage, day and night.",
     description:
-      "Air-conditioning cleaning, maintenance and technical support delivered by trained, dependable technicians.",
+      "IP cameras, DVR/NVR recorders and complete security camera kits for homes, offices and stores.",
     image:
-      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=2000&q=80",
+      "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=2000&q=80",
+  },
+  {
+    eyebrow: "Software & SaaS",
+    title: "Software ready to use from day one.",
+    description:
+      "Subscribe to our proprietary SaaS platforms and software licenses built for growing businesses.",
+    image:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=2000&q=80",
   },
 ];
 
-export const services = [
-  {
-    icon: "code",
-    title: "Software Development",
-    description:
-      "Custom web, mobile and enterprise applications — from idea to launch and long-term support.",
-  },
+export const products = [
   {
     icon: "fingerprint",
-    title: "Biometric Sales & Setup",
+    title: "Biometric Devices",
     description:
-      "Fingerprint and face-recognition devices for attendance and access control, fully installed and configured.",
-  },
-  {
-    icon: "wind",
-    title: "Air-Conditioning Cleaning",
-    description:
-      "Thorough cleaning and preventive maintenance for split, window and ceiling-mounted units.",
-  },
-  {
-    icon: "server",
-    title: "IT Support & Networking",
-    description:
-      "Network setup, hardware troubleshooting and ongoing IT support for offices of any size.",
+      "Fingerprint and face-recognition terminals for time attendance and access control, with optional setup included with your purchase.",
+    items: ["Fingerprint scanners", "Face recognition", "Access control", "RFID readers"],
+    image:
+      "https://images.unsplash.com/photo-1633265486064-086b219458ec?w=1200&q=80",
   },
   {
     icon: "camera",
-    title: "CCTV & Security Systems",
+    title: "CCTV Cameras & Security Systems",
     description:
-      "Surveillance cameras and security systems designed for clear coverage and peace of mind.",
+      "IP and analog cameras, DVR/NVR recorders, storage drives and complete surveillance kits.",
+    items: ["IP cameras", "DVR / NVR", "Camera kits", "Storage drives"],
+    image:
+      "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=1200&q=80",
   },
   {
-    icon: "wrench",
-    title: "Facility & Technical Services",
+    icon: "server",
+    title: "Networking Devices & Equipment",
     description:
-      "Electrical, maintenance and general technical services handled by one trusted team.",
+      "Routers, switches, wireless access points, cables and accessories for homes and offices.",
+    items: ["Routers", "Switches", "Access points", "Cables & accessories"],
+    image:
+      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200&q=80",
+  },
+  {
+    icon: "code",
+    title: "Software & SaaS Products",
+    description:
+      "Ready-to-use software licenses and subscription-based SaaS platforms developed by MPTB Solutions.",
+    items: ["SaaS subscriptions", "Software licenses", "Cloud dashboards"],
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
   },
 ] as const;
 
+export const productPerks = [
+  { icon: "badge", title: "Genuine products", description: "Sourced from trusted brands" },
+  { icon: "card", title: "Secure online payment", description: "Pay safely online" },
+  { icon: "truck", title: "Delivered to you", description: "Shipped straight to your door" },
+  { icon: "shield", title: "Warranty included", description: "With after-sales assistance" },
+] as const;
+
 export const stats = [
-  { value: "100+", label: "Projects delivered" },
-  { value: "50+", label: "Business clients" },
-  { value: "6", label: "Service lines" },
-  { value: "24/7", label: "Support availability" },
+  { value: "100+", label: "Orders delivered" },
+  { value: "50+", label: "Business customers" },
+  { value: "4", label: "Product categories" },
+  { value: "24/7", label: "Online inquiries" },
 ];
 
 export const steps = [
   {
-    title: "Consult",
+    title: "Browse",
     description:
-      "We listen to your needs and assess what your business really requires.",
+      "Explore our biometric, CCTV, networking and software product lines.",
   },
   {
-    title: "Plan",
+    title: "Request a Quote",
     description:
-      "A clear proposal with scope, timeline and cost — no surprises.",
+      "Send us the products and quantities you need and get a clear price.",
   },
   {
-    title: "Deliver",
+    title: "Order & Pay",
     description:
-      "Our team builds, installs or services with quality checks at every step.",
+      "Confirm your order and pay securely online.",
   },
   {
-    title: "Support",
+    title: "Delivery & Activation",
     description:
-      "We stay with you after delivery with maintenance and responsive support.",
+      "Hardware is shipped to you; software licenses and SaaS accounts are activated online.",
   },
 ];

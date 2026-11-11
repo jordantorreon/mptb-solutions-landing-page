@@ -1,7 +1,7 @@
 import { Footer } from "@/components/Footer";
 import { HeroCarousel } from "@/components/HeroCarousel";
 import { Navbar } from "@/components/Navbar";
-import { About, Contact, Process, Services, Stats } from "@/components/Sections";
+import { About, Contact, Process, Products, Stats } from "@/components/Sections";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroCarousel />
-        <Services />
+        <Products />
         <About />
         <Stats />
         <Process />

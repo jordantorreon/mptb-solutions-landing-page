@@ -71,10 +71,10 @@ export function HeroCarousel() {
                   style={{ animationDelay: "300ms" }}
                 >
                   <a
-                    href="#services"
+                    href="#products"
                     className="group inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-brand-dark"
                   >
-                    Explore Services
+                    Explore Products
                     <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                   </a>
                   <a

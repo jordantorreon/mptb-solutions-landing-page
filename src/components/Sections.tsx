@@ -1,6 +1,8 @@
 import Image from "next/image";
 import {
   ArrowRight,
+  ArrowUpRight,
+  BadgeCheck,
   Camera,
   CheckCircle2,
   Code2,
@@ -9,18 +11,24 @@ import {
   MapPin,
   Phone,
   Server,
-  Wind,
-  Wrench,
+  ShieldCheck,
+  CreditCard,
+  Truck,
 } from "lucide-react";
-import { services, site, stats, steps } from "@/lib/site";
+import { productPerks, products, site, stats, steps } from "@/lib/site";
 
 const icons = {
   code: Code2,
   fingerprint: Fingerprint,
-  wind: Wind,
   server: Server,
   camera: Camera,
-  wrench: Wrench,
+};
+
+const perkIcons = {
+  badge: BadgeCheck,
+  card: CreditCard,
+  truck: Truck,
+  shield: ShieldCheck,
 };
 
 function SectionHeading({
@@ -54,46 +62,105 @@ function SectionHeading({
   );
 }
 
-export function Services() {
+export function Products() {
   return (
-    <section id="services" className="scroll-mt-16 bg-white py-24 sm:py-32">
+    <section id="products" className="scroll-mt-16 bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+        <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <SectionHeading
-            eyebrow="What we do"
-            title="One partner for technology and technical services."
-            description="We combine software expertise with hands-on technical work, so you can rely on a single team for both your systems and your facilities."
+            eyebrow="Our products"
+            title="Technology hardware and software, all in one shop."
+            description="We sell biometric devices, CCTV cameras, networking equipment and our own SaaS products online — sourced from trusted brands and delivered to your door."
           />
+          <a
+            href="#contact"
+            className="group inline-flex shrink-0 items-center gap-2 self-start rounded-full border border-ink/15 px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white lg:self-auto"
+          >
+            Request a quote
+            <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+          </a>
         </div>
 
-        <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => {
-            const Icon = icons[service.icon];
+        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:gap-8">
+          {products.map((product, i) => {
+            const Icon = icons[product.icon];
             return (
               <article
-                key={service.title}
-                className="group relative bg-white p-8 transition-colors duration-300 hover:bg-ink sm:p-10"
+                key={product.title}
+                className="group relative flex flex-col overflow-hidden rounded-3xl border border-black/10 bg-white transition-all duration-500 hover:-translate-y-1 hover:border-brand/30 hover:shadow-2xl hover:shadow-black/10"
               >
-                <span className="grid size-12 place-items-center rounded-xl bg-brand/10 text-brand transition-colors duration-300 group-hover:bg-brand group-hover:text-white">
-                  <Icon className="size-6" strokeWidth={1.75} />
-                </span>
-                <h3 className="mt-6 text-lg font-semibold text-ink transition-colors duration-300 group-hover:text-white">
-                  {service.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink/60 transition-colors duration-300 group-hover:text-white/65">
-                  {service.description}
-                </p>
-                <a
-                  href="#contact"
-                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-brand"
-                >
-                  Inquire
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                </a>
+                <div className="relative aspect-[16/9] overflow-hidden bg-ink">
+                  <Image
+                    src={product.image}
+                    alt={product.title}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover opacity-90 transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                  <span className="absolute top-5 left-5 rounded-full bg-white/90 px-3 py-1 font-mono text-xs font-medium text-ink backdrop-blur">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="absolute top-5 right-5 grid size-10 place-items-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur transition-all duration-300 group-hover:opacity-100">
+                    <ArrowUpRight className="size-5" />
+                  </span>
+                </div>
+
+                <div className="relative flex flex-1 flex-col px-7 pt-10 pb-7 sm:px-8">
+                  <span className="absolute -top-7 left-7 grid size-14 place-items-center rounded-2xl bg-brand text-white shadow-lg shadow-brand/30 ring-4 ring-white sm:left-8">
+                    <Icon className="size-6" strokeWidth={1.75} />
+                  </span>
+                  <h3 className="text-xl font-semibold tracking-tight text-ink">
+                    {product.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink/60">
+                    {product.description}
+                  </p>
+                  <ul className="mt-5 mb-8 flex flex-wrap gap-2">
+                    {product.items.map((item) => (
+                      <li
+                        key={item}
+                        className="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-ink/70 transition-colors group-hover:bg-brand/10 group-hover:text-brand-dark"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-auto flex items-center justify-between border-t border-black/5 pt-6">
+                    <span className="text-xs tracking-wider text-ink/45 uppercase">
+                      Available to order
+                    </span>
+                    <a
+                      href="#contact"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-brand after:absolute after:inset-0"
+                      aria-label={`Request a quote for ${product.title}`}
+                    >
+                      Request a quote
+                      <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                    </a>
+                  </div>
+                </div>
               </article>
             );
           })}
         </div>
+
+        <ul className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10 sm:grid-cols-2 lg:grid-cols-4">
+          {productPerks.map((perk) => {
+            const Icon = perkIcons[perk.icon];
+            return (
+              <li key={perk.title} className="flex items-center gap-4 bg-neutral-50 p-6">
+                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-white text-brand shadow-sm">
+                  <Icon className="size-5" strokeWidth={1.75} />
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-ink">{perk.title}</p>
+                  <p className="text-xs text-ink/55">{perk.description}</p>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </section>
   );
@@ -101,10 +168,10 @@ export function Services() {
 
 export function About() {
   const points = [
-    "In-house developers and certified technicians",
-    "Transparent quotes and clear timelines",
-    "After-sales support and maintenance plans",
-    "Trusted by offices, schools and businesses",
+    "Genuine products from trusted brands",
+    "Transparent pricing and quick quotations",
+    "Secure online payment",
+    "Product warranty and after-sales assistance",
   ];
 
   return (
@@ -132,8 +199,8 @@ export function About() {
         <div>
           <SectionHeading
             eyebrow="Who we are"
-            title="A tech company with a hands-on approach."
-            description={`${site.name} brings together software engineering, security technology and technical services under one roof. We believe great technology should be simple to use, dependable, and backed by people who show up.`}
+            title="Your online source for business technology."
+            description={`${site.name} is an online retailer of technology products — biometric devices, CCTV and security systems, networking equipment — and the developer of our own proprietary SaaS software. We make it simple to find, order and pay for the tech your business needs.`}
           />
           <ul className="mt-10 space-y-4">
             {points.map((point) => (
@@ -147,7 +214,7 @@ export function About() {
             href="#contact"
             className="mt-10 inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-brand"
           >
-            Work with us
+            Shop our products
             <ArrowRight className="size-4" />
           </a>
         </div>
@@ -178,9 +245,9 @@ export function Process() {
     <section id="process" className="scroll-mt-16 bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading
-          eyebrow="How we work"
-          title="A simple process, done right."
-          description="Whether it's a new system or a routine service call, every engagement follows the same clear steps."
+          eyebrow="How to order"
+          title="Ordering made simple."
+          description="Whether you need a single device or a full set of equipment, every order follows the same easy steps."
         />
         <ol className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, i) => (
@@ -216,7 +283,7 @@ export function Contact() {
             light
             eyebrow="Get in touch"
             title="Let's talk about what you need."
-            description="Tell us about your project or service request and our team will get back to you within one business day."
+            description="Tell us which products you're interested in and our team will send you a quotation within one business day."
           />
           <ul className="mt-12 space-y-6">
             {details.map(({ icon: Icon, label, value, href }) => (
@@ -250,16 +317,16 @@ export function Contact() {
             <Field label="Email" name="email" type="email" required />
             <Field label="Phone" name="phone" type="tel" />
             <label className="block">
-              <span className="text-sm font-medium text-ink">Service</span>
+              <span className="text-sm font-medium text-ink">Product</span>
               <select
-                name="service"
+                name="product"
                 className="mt-2 w-full rounded-lg border border-black/15 bg-white px-4 py-3 text-sm text-ink outline-none focus:border-brand focus:ring-2 focus:ring-brand/20"
                 defaultValue=""
               >
                 <option value="" disabled>
-                  Select a service
+                  Select a product
                 </option>
-                {services.map((s) => (
+                {products.map((s) => (
                   <option key={s.title}>{s.title}</option>
                 ))}
                 <option>Other</option>
@@ -273,7 +340,7 @@ export function Contact() {
               rows={5}
               required
               className="mt-2 w-full resize-none rounded-lg border border-black/15 px-4 py-3 text-sm text-ink outline-none focus:border-brand focus:ring-2 focus:ring-brand/20"
-              placeholder="Tell us a bit about your needs…"
+              placeholder="Tell us the products, models and quantities you need…"
             />
           </label>
           <button
