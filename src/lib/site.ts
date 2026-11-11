@@ -63,9 +63,13 @@ export const products = [
     title: "Biometric Devices",
     description:
       "Fingerprint and face-recognition terminals for time attendance and access control, with optional setup included with your purchase.",
-    items: ["Fingerprint scanners", "Face recognition", "Access control", "RFID readers"],
-    image:
-      "https://images.unsplash.com/photo-1633265486064-086b219458ec?w=1200&q=80",
+    items: [
+      "Fingerprint scanners",
+      "Face recognition",
+      "Access control",
+      "RFID readers",
+    ],
+    image: "/products/zkteco-bio-1.jpeg",
   },
   {
     icon: "camera",
@@ -91,16 +95,32 @@ export const products = [
     description:
       "Ready-to-use software licenses and subscription-based SaaS platforms developed by MPTB Solutions.",
     items: ["SaaS subscriptions", "Software licenses", "Cloud dashboards"],
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
+    image: "/products/saas-workforce-analytics.png",
+    contain: true,
   },
 ] as const;
 
 export const productPerks = [
-  { icon: "badge", title: "Genuine products", description: "Sourced from trusted brands" },
-  { icon: "card", title: "Secure online payment", description: "Pay safely online" },
-  { icon: "truck", title: "Delivered to you", description: "Shipped straight to your door" },
-  { icon: "shield", title: "Warranty included", description: "With after-sales assistance" },
+  {
+    icon: "badge",
+    title: "Genuine products",
+    description: "Sourced from trusted brands",
+  },
+  {
+    icon: "card",
+    title: "Secure online payment",
+    description: "Pay safely online",
+  },
+  {
+    icon: "truck",
+    title: "Delivered to you",
+    description: "Shipped straight to your door",
+  },
+  {
+    icon: "shield",
+    title: "Warranty included",
+    description: "With after-sales assistance",
+  },
 ] as const;
 
 export const stats = [
@@ -123,8 +143,7 @@ export const steps = [
   },
   {
     title: "Order & Pay",
-    description:
-      "Confirm your order and pay securely online.",
+    description: "Confirm your order and pay securely online.",
   },
   {
     title: "Delivery & Activation",

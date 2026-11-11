@@ -84,24 +84,33 @@ export function Products() {
         <div className="mt-16 grid gap-6 md:grid-cols-2 lg:gap-8">
           {products.map((product, i) => {
             const Icon = icons[product.icon];
+            const contain = "contain" in product && product.contain;
             return (
               <article
                 key={product.title}
                 className="group relative flex flex-col overflow-hidden rounded-3xl border border-black/10 bg-white transition-all duration-500 hover:-translate-y-1 hover:border-brand/30 hover:shadow-2xl hover:shadow-black/10"
               >
-                <div className="relative aspect-[16/9] overflow-hidden bg-ink">
+                <div
+                  className={`relative aspect-[16/9] overflow-hidden ${contain ? "bg-white" : "bg-ink"}`}
+                >
                   <Image
                     src={product.image}
                     alt={product.title}
                     fill
                     sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-cover opacity-90 transition-transform duration-700 ease-out group-hover:scale-105"
+                    className={`transition-transform duration-700 ease-out group-hover:scale-105 ${
+                      contain ? "object-contain p-4" : "object-cover opacity-90"
+                    }`}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                  {!contain && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                  )}
                   <span className="absolute top-5 left-5 rounded-full bg-white/90 px-3 py-1 font-mono text-xs font-medium text-ink backdrop-blur">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="absolute top-5 right-5 grid size-10 place-items-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur transition-all duration-300 group-hover:opacity-100">
+                  <span
+                    className={`absolute top-5 right-5 grid size-10 place-items-center rounded-full text-white opacity-0 backdrop-blur transition-all duration-300 group-hover:opacity-100 ${contain ? "bg-ink/80" : "bg-white/15"}`}
+                  >
                     <ArrowUpRight className="size-5" />
                   </span>
                 </div>
